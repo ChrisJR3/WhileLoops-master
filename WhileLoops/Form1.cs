@@ -51,11 +51,11 @@ namespace WhileLoops
 
             //initialize
             int x = 0;
-            int y = 150;
+            int y = 0;
             int starSize = 10;
             
             //test
-            while (x < this.Width-starSize)	
+            while (y < this.Height - starSize)	
             {
                 //act
                 formGraphics.Clear(Color.Black);
@@ -63,7 +63,8 @@ namespace WhileLoops
                 Thread.Sleep(5);
                 
                 //change
-                x++;
+                y = y+3;
+                x = x + 3;
             }
         }
 
@@ -76,19 +77,19 @@ namespace WhileLoops
             int pixelGrow = 1;
             int x = 50;
             int y = 150;
-            int starSize = 50;
+            int starSize = 1;
                 	    
             //test
-            while (pixelGrow < 50)	
+            while (pixelGrow < 100)	
             {
                 //act
                 formGraphics.Clear(Color.Black);
-                formGraphics.FillRectangle(drawBrush, x, y, starSize + pixelGrow, starSize + pixelGrow);
+                formGraphics.FillRectangle(drawBrush, x-pixelGrow/2, y - pixelGrow / 2, starSize + pixelGrow, starSize + pixelGrow);
             
                 Thread.Sleep(5);
 
                 //change
-                pixelGrow++;	
+                pixelGrow=pixelGrow+5;	
             }
         }
 
@@ -98,15 +99,15 @@ namespace WhileLoops
             SolidBrush drawBrush = new SolidBrush(Color.White);
 
             //initialize
-            int r = 0;
+            int r = 255;
             int g = 0;
-            int b = 1;
+            int b = 0;
             int x = 50;
             int y = 150;
             int starSize = 50;
 
             //test
-            while (b < 256)
+            while (r > 0)
             {
                 //act
                 drawBrush.Color = Color.FromArgb(r , g , b);
@@ -118,6 +119,7 @@ namespace WhileLoops
 
                 //change
                 b++;
+                r--;
             }
         }
     }
